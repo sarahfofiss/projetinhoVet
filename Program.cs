@@ -1,3 +1,9 @@
+
+
+
+
+
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,15 +58,6 @@ namespace Projetinho
                         cmd.Parameters.AddWithValue("@telefone", c.telefone);
                         cmd.Parameters.AddWithValue("@email", c.email);
                         cmd.ExecuteNonQuery();
-
-
-
-
-
-
-
-
-
                         conexao.Close();
                         Console.ReadKey();
                         break;
@@ -113,7 +110,7 @@ namespace Projetinho
                         break;
                     case "5":
                         c.atualizarCliente();
-                        sql = "update cliente set @nome, @cep, @pet, @telefone, @email where @cpf)";
+                        sql = "update cliente set (@nome, @cep, @pet, @telefone, @email where @cpf";
                         cmd = new MySqlCommand(sql, conexao);
                         cmd.Parameters.AddWithValue("@cpf", c.cpf);
                         cmd.Parameters.AddWithValue("@nome", c.nome);
@@ -124,7 +121,7 @@ namespace Projetinho
                         cmd.ExecuteNonQuery();
                         conexao.Close();
                         Console.ReadKey();
-                        break;
+                        break;0
                     case "6":
                         con.atualizarConsulta();
                         sql = "update consulta set @data_consulta, @hora_consulta, @tipo_consulta, @valor where @id_consulta";
