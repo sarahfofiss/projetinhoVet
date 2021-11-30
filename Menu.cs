@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +18,8 @@ namespace Projetinho
             Console.WriteLine("4 -Cadastrar Veterinario");
             Console.WriteLine("5 -Atualizar Cliente");
             Console.WriteLine("6 -Atualizar Consulta");
+            Console.WriteLine("7 -Mostrar Consulta");
+            Console.WriteLine("8 -Deletar Consulta");
             Console.WriteLine("Q -Sair");
             Console.WriteLine("Escolha uma opcao:");
             string opcao;
