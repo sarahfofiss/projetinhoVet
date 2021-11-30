@@ -1,10 +1,4 @@
-
-
-
-
-
-
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +40,6 @@ namespace Projetinho
                 switch (opcao)
                 {
                     case "1":
-
                         Console.WriteLine("Cadastrar Cliente");
                         c.cadastrarCliente();
                         sql = "insert into cliente values(@nome, @cpf, @cep, @pet, @telefone, @email)";
@@ -110,7 +103,7 @@ namespace Projetinho
                         break;
                     case "5":
                         c.atualizarCliente();
-                        sql = "update cliente set (@nome, @cep, @pet, @telefone, @email where @cpf";
+                        sql = "update cliente set nome= @nome, cep= @cep, pet= @pet, telefone= @telefone, email= @email where cpf= @cpf";
                         cmd = new MySqlCommand(sql, conexao);
                         cmd.Parameters.AddWithValue("@cpf", c.cpf);
                         cmd.Parameters.AddWithValue("@nome", c.nome);
@@ -121,10 +114,10 @@ namespace Projetinho
                         cmd.ExecuteNonQuery();
                         conexao.Close();
                         Console.ReadKey();
-                        break;0
+                        break;
                     case "6":
                         con.atualizarConsulta();
-                        sql = "update consulta set @data_consulta, @hora_consulta, @tipo_consulta, @valor where @id_consulta";
+                        sql = "update consulta set data_consulta= @data_consulta, hora_consulta= @hora_consulta, tipo_consulta= @tipo_consulta, valor= @valor where id_consulta= @id_consulta";
                         cmd = new MySqlCommand(sql, conexao);
                         cmd.Parameters.AddWithValue("@id_consulta", con.id_consulta);
                         cmd.Parameters.AddWithValue("@data_consulta", con.data_consulta);
